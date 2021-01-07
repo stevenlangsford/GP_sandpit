@@ -4,6 +4,16 @@
 using Markdown
 using InteractiveUtils
 
+# ╔═╡ 1ad8f830-50e2-11eb-04ab-0b0ad17539a6
+#I thought the Project.toml was supposed to do this? What's gone wrong here? 
+begin
+	using Pkg
+	Pkg.add("GaussianProcesses")
+	Pkg.add("Random")
+	Pkg.add("Plots")
+#Pkg.status() #gets info for binder Project.toml (in console, not notebook)
+end
+
 # ╔═╡ c7b76b10-5059-11eb-1fd3-eff019f62e11
 begin #dependencies: slow, possibly several minutes to precompile everything
 	using GaussianProcesses
@@ -17,10 +27,6 @@ which is a walkthrough of [this library](https://github.com/STOR-i/GaussianProce
 
 A lot of the appeal of going with Julia for this is actually [Stheno](https://github.com/willtebbutt/Stheno.jl), although python fans note there is also python version of this package! (The Julia version is supposed to enjoy a speed advantage and more importantly can interact with Soss and optim.jl, but on the other hand the python one is in python). I'm still too much of a beginner for the Stheno tools quite yet, but I think might be useful to try to head in that direction for possible future questions like 'can we infer things about the human kernel'
 "
-
-# ╔═╡ 60c4ceb0-50dc-11eb-3421-519bfc87777b
-#using Pkg
-#Pkg.status() #get info for binder Project.toml (in console, not notebook)
 
 # ╔═╡ b42c1d00-50d8-11eb-1e8b-090170ad069f
 md"## World setup"
@@ -64,8 +70,8 @@ plot(contour(gp) ,heatmap(gp); fmt=:png) #Woohoo! This thing is analogous to the
 
 # ╔═╡ Cell order:
 # ╟─a396df50-5058-11eb-2f43-a1622da4a533
+# ╠═1ad8f830-50e2-11eb-04ab-0b0ad17539a6
 # ╠═c7b76b10-5059-11eb-1fd3-eff019f62e11
-# ╟─60c4ceb0-50dc-11eb-3421-519bfc87777b
 # ╟─b42c1d00-50d8-11eb-1e8b-090170ad069f
 # ╠═d4f60080-50d5-11eb-35b1-fdff2d46911d
 # ╠═f08c59e0-50d8-11eb-0ddf-e3c4c3f848e9
